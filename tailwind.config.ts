@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					muted: 'hsl(var(--primary-muted))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,16 +53,27 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				glass: 'hsl(var(--glass))',
+				'glass-border': 'hsl(var(--glass-border))',
+				member: {
+					orange: 'hsl(var(--member-orange))',
+					blue: 'hsl(var(--member-blue))',
+					green: 'hsl(var(--member-green))',
+					purple: 'hsl(var(--member-purple))'
+				},
+				weather: {
+					sunny: 'hsl(var(--weather-sunny))',
+					cloudy: 'hsl(var(--weather-cloudy))',
+					rainy: 'hsl(var(--weather-rainy))'
+				},
+				transit: {
+					'on-time': 'hsl(var(--transit-on-time))',
+					delayed: 'hsl(var(--transit-delayed))',
+					cancelled: 'hsl(var(--transit-cancelled))'
 				}
+			},
+			backdropBlur: {
+				xs: '2px'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
