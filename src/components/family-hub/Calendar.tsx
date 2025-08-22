@@ -86,7 +86,7 @@ export const Calendar = ({ viewMode }: CalendarProps) => {
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-semibold text-high-contrast">
             {currentDate.toLocaleDateString("en-US", { 
               weekday: "long", 
               month: "long", 
@@ -108,7 +108,7 @@ export const Calendar = ({ viewMode }: CalendarProps) => {
           <div className="space-y-1 max-h-[600px] overflow-y-auto">
             {hours.map((hour) => (
               <div key={hour} className="flex items-center border-b border-muted py-4 relative">
-                <div className="w-16 text-sm text-muted-foreground font-medium">
+                <div className="w-16 text-sm text-readable font-semibold">
                   {hour.toString().padStart(2, "0")}:00
                 </div>
                 <div className="flex-1 ml-4 min-h-[48px] relative">
@@ -127,8 +127,8 @@ export const Calendar = ({ viewMode }: CalendarProps) => {
                       >
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-medium">{event.title}</p>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="font-semibold text-high-contrast">{event.title}</p>
+                            <p className="text-sm text-readable">
                               {formatTime(event.start)} - {formatTime(event.end)}
                             </p>
                           </div>
@@ -152,7 +152,7 @@ export const Calendar = ({ viewMode }: CalendarProps) => {
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">Agenda</h2>
+          <h2 className="text-2xl font-semibold text-high-contrast">Agenda</h2>
         </div>
         
         <div className="space-y-3">
@@ -163,8 +163,8 @@ export const Calendar = ({ viewMode }: CalendarProps) => {
                 title={event.owner.name}
               />
               <div className="flex-1">
-                <h3 className="font-medium">{event.title}</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="font-semibold text-high-contrast">{event.title}</h3>
+                <p className="text-sm text-readable">
                   {formatDate(event.start)} • {formatTime(event.start)} - {formatTime(event.end)}
                 </p>
               </div>

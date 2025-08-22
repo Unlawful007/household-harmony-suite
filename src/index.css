@@ -2,62 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Family Hub Design System - All colors MUST be HSL */
+/* High Contrast Family Hub Design System - WCAG AA Compliant */
 
 @layer base {
   :root {
-    /* Core App Colors */
-    --background: 220 40% 98%;
-    --foreground: 220 13% 18%;
+    /* Core App Colors - High Contrast Light Mode */
+    --background: 220 15% 97%;
+    --foreground: 220 25% 15%;
 
-    /* Glass Morphism & Cards */
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
-    --glass: 0 0% 100% / 0.15;
-    --glass-border: 0 0% 100% / 0.2;
+    /* Enhanced Glass Morphism & Cards - More Opaque for Readability */
+    --card: 0 0% 99%;
+    --card-foreground: 220 25% 15%;
+    --glass: 0 0% 100% / 0.85;
+    --glass-border: 220 15% 85% / 0.6;
+    --glass-shadow: 220 15% 25% / 0.1;
 
-    /* Primary Brand Colors (Blue Theme) */
-    --primary: 217 91% 60%;
+    /* Primary Brand Colors - Accessible Blue Theme */
+    --primary: 217 91% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-muted: 217 70% 85%;
+    --primary-muted: 217 50% 90%;
     
-    /* Family Hub Gradients */
-    --gradient-main: linear-gradient(135deg, hsl(250 84% 54%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
+    /* High Contrast Gradients */
+    --gradient-main: linear-gradient(135deg, hsl(240 25% 92%) 0%, hsl(220 25% 88%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(220 15% 98% / 0.85) 100%);
     
-    /* Semantic Colors */
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 220 13% 18%;
+    /* Semantic Colors - High Contrast */
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 9% 55%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 15% 35%;
 
-    --accent: 217 91% 60%;
+    --accent: 217 91% 45%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* Interactive Elements */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 220 15% 80%;
+    --input: 220 15% 88%;
+    --ring: 217 91% 45%;
 
-    /* Family Member Colors */
-    --member-orange: 25 95% 65%;
-    --member-blue: 217 91% 60%;
-    --member-green: 142 71% 45%;
-    --member-purple: 262 83% 58%;
+    /* Family Member Colors - High Contrast */
+    --member-orange: 25 85% 50%;
+    --member-blue: 217 85% 50%;
+    --member-green: 142 65% 40%;
+    --member-purple: 262 75% 45%;
 
-    /* Weather & Status Colors */
-    --weather-sunny: 45 100% 60%;
-    --weather-cloudy: 220 13% 65%;
-    --weather-rainy: 217 91% 60%;
+    /* Weather & Status Colors - Accessible */
+    --weather-sunny: 45 90% 55%;
+    --weather-cloudy: 220 15% 50%;
+    --weather-rainy: 217 85% 50%;
     
-    /* Transit Colors */
-    --transit-on-time: 142 71% 45%;
-    --transit-delayed: 25 95% 65%;
-    --transit-cancelled: 0 84% 60%;
+    /* Transit Colors - High Contrast */
+    --transit-on-time: 142 65% 40%;
+    --transit-delayed: 25 85% 50%;
+    --transit-cancelled: 0 75% 45%;
 
     --radius: 0.75rem;
 
@@ -79,42 +80,59 @@
   }
 
   .dark {
-    /* Core App Colors - Dark Mode */
-    --background: 220 27% 8%;
-    --foreground: 220 40% 98%;
+    /* Core App Colors - High Contrast Dark Mode */
+    --background: 220 25% 12%;
+    --foreground: 220 15% 92%;
 
-    /* Glass Morphism & Cards - Dark Mode */
-    --card: 220 27% 12%;
-    --card-foreground: 220 40% 98%;
-    --glass: 0 0% 0% / 0.2;
-    --glass-border: 0 0% 100% / 0.1;
+    /* Enhanced Glass Morphism & Cards - Dark Mode with Better Opacity */
+    --card: 220 25% 18%;
+    --card-foreground: 220 15% 92%;
+    --glass: 220 25% 20% / 0.8;
+    --glass-border: 220 15% 35% / 0.6;
+    --glass-shadow: 220 25% 8% / 0.2;
 
-    /* Primary Brand Colors - Dark Mode */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-muted: 217 70% 25%;
+    /* Primary Brand Colors - Dark Mode Accessible */
+    --primary: 217 85% 65%;
+    --primary-foreground: 220 25% 12%;
+    --primary-muted: 217 50% 25%;
 
-    /* Family Hub Gradients - Dark Mode */
-    --gradient-main: linear-gradient(135deg, hsl(250 84% 24%) 0%, hsl(217 91% 30%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.05) 0%, hsl(0 0% 100% / 0.02) 100%);
+    /* High Contrast Gradients - Dark Mode */
+    --gradient-main: linear-gradient(135deg, hsl(240 25% 15%) 0%, hsl(220 25% 18%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(220 25% 22% / 0.9) 0%, hsl(220 25% 18% / 0.8) 100%);
 
-    /* Semantic Colors - Dark Mode */
-    --secondary: 220 27% 15%;
-    --secondary-foreground: 220 40% 98%;
+    /* Semantic Colors - Dark Mode High Contrast */
+    --secondary: 220 25% 22%;
+    --secondary-foreground: 220 15% 92%;
 
-    --muted: 220 27% 15%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 220 25% 20%;
+    --muted-foreground: 220 15% 70%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 217 85% 65%;
+    --accent-foreground: 220 25% 12%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Interactive Elements - Dark Mode */
-    --border: 220 27% 20%;
-    --input: 220 27% 20%;
-    --ring: 217 91% 60%;
+    --border: 220 25% 30%;
+    --input: 220 25% 25%;
+    --ring: 217 85% 65%;
+
+    /* Family Member Colors - Dark Mode Accessible */
+    --member-orange: 25 85% 60%;
+    --member-blue: 217 85% 65%;
+    --member-green: 142 65% 50%;
+    --member-purple: 262 75% 60%;
+
+    /* Weather & Status Colors - Dark Mode */
+    --weather-sunny: 45 90% 65%;
+    --weather-cloudy: 220 15% 60%;
+    --weather-rainy: 217 85% 65%;
+    
+    /* Transit Colors - Dark Mode */
+    --transit-on-time: 142 65% 50%;
+    --transit-delayed: 25 85% 60%;
+    --transit-cancelled: 0 75% 60%;
   }
 }
 
@@ -128,14 +146,15 @@
   }
 }
 
-/* Glass Morphism Utilities */
+/* High Contrast Glass Morphism Utilities */
 @layer components {
   .glass-card {
-    @apply backdrop-blur-xl bg-glass border border-glass-border rounded-xl shadow-lg;
+    @apply backdrop-blur-lg bg-glass border border-glass-border rounded-xl shadow-xl font-medium;
+    box-shadow: 0 8px 32px hsl(var(--glass-shadow)), 0 4px 16px hsl(var(--glass-shadow));
   }
   
   .glass-sidebar {
-    @apply backdrop-blur-lg bg-glass border-r border-glass-border;
+    @apply backdrop-blur-lg bg-glass border-r border-glass-border font-medium;
   }
   
   .gradient-main {
@@ -147,7 +166,7 @@
   }
   
   .member-dot {
-    @apply w-3 h-3 rounded-full inline-block;
+    @apply w-3 h-3 rounded-full inline-block shadow-sm;
   }
   
   .member-dot-orange {
@@ -164,5 +183,14 @@
   
   .member-dot-purple {
     background-color: hsl(var(--member-purple));
+  }
+
+  /* High contrast text utilities */
+  .text-high-contrast {
+    @apply text-foreground font-medium;
+  }
+  
+  .text-readable {
+    @apply text-foreground/90 font-medium leading-relaxed;
   }
 }

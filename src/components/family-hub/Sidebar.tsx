@@ -1,6 +1,9 @@
 import { Cloud, Sun, CloudRain, Train, Users, Plus, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CommuteWidget } from "./CommuteWidget";
+import { GroceryMealPlanner } from "./GroceryMealPlanner";
+import { FamilyPhotoWidget } from "./FamilyPhotoWidget";
 
 // Sample data
 const weatherData = {
@@ -76,28 +79,31 @@ export const Sidebar = () => {
     <div className="space-y-6">
       {/* Weather Widget */}
       <div className="glass-card p-6 space-y-4">
-        <h3 className="text-lg font-semibold flex items-center">
+        <h3 className="text-lg font-semibold flex items-center text-high-contrast">
           Weather — {weatherData.location}
         </h3>
         
         <div className="flex items-center space-x-4">
           {getWeatherIcon(weatherData.icon)}
           <div>
-            <div className="text-3xl font-bold">{weatherData.temperature}°</div>
-            <div className="text-sm text-muted-foreground">{weatherData.condition}</div>
-            <div className="text-sm text-muted-foreground">Feels like {weatherData.feelsLike}°</div>
+            <div className="text-3xl font-bold text-high-contrast">{weatherData.temperature}°</div>
+            <div className="text-sm text-readable">{weatherData.condition}</div>
+            <div className="text-sm text-readable">Feels like {weatherData.feelsLike}°</div>
           </div>
         </div>
         
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between text-sm text-readable">
           <span>High: {weatherData.high}° • Low: {weatherData.low}°</span>
           <span>Precipitation: {weatherData.precipitation}%</span>
         </div>
       </div>
 
+      {/* Commute Widget */}
+      <CommuteWidget />
+
       {/* Transit Widget */}
       <div className="glass-card p-6 space-y-4">
-        <h3 className="text-lg font-semibold flex items-center">
+        <h3 className="text-lg font-semibold flex items-center text-high-contrast">
           <Train className="w-5 h-5 mr-2" />
           Next Available Trains
         </h3>
@@ -106,14 +112,14 @@ export const Sidebar = () => {
           {trainDepartures.map((departure) => (
             <div key={departure.id} className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
               <div className="flex-1">
-                <div className="font-medium text-sm">{departure.route}</div>
-                <div className="text-xs text-muted-foreground">{departure.platform}</div>
+                <div className="font-medium text-sm text-high-contrast">{departure.route}</div>
+                <div className="text-xs text-readable">{departure.platform}</div>
               </div>
               <div className="text-right">
-                <div className="font-medium">{departure.time}</div>
+                <div className="font-semibold text-high-contrast">{departure.time}</div>
                 <Badge 
                   variant={departure.statusType === "on-time" ? "default" : "secondary"}
-                  className="text-xs"
+                  className="text-xs font-medium"
                 >
                   {departure.status}
                 </Badge>
@@ -123,9 +129,12 @@ export const Sidebar = () => {
         </div>
       </div>
 
+      {/* Grocery & Meal Planner Widget */}
+      <GroceryMealPlanner />
+
       {/* Presence Widget */}
       <div className="glass-card p-6 space-y-4">
-        <h3 className="text-lg font-semibold flex items-center">
+        <h3 className="text-lg font-semibold flex items-center text-high-contrast">
           <Users className="w-5 h-5 mr-2" />
           Who's home
         </h3>
@@ -139,7 +148,7 @@ export const Sidebar = () => {
                 }`}
                 title={`${person.name} - ${person.isHome ? 'Home' : 'Away'}`}
               />
-              <span className="text-sm font-medium">{person.initials}</span>
+              <span className="text-sm font-semibold text-high-contrast">{person.initials}</span>
             </div>
           ))}
         </div>
@@ -148,7 +157,7 @@ export const Sidebar = () => {
       {/* Tasks Widget */}
       <div className="glass-card p-6 space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">Tasks</h3>
+          <h3 className="text-lg font-semibold text-high-contrast">Tasks</h3>
           <Button size="icon" variant="ghost" className="h-8 w-8">
             <Plus className="w-4 h-4" />
           </Button>
@@ -160,14 +169,17 @@ export const Sidebar = () => {
               <CheckCircle2 
                 className={`w-4 h-4 ${task.completed ? 'text-primary' : 'text-muted-foreground'}`}
               />
-              <span className={`flex-1 text-sm ${task.completed ? 'line-through text-muted-foreground' : ''}`}>
+              <span className={`flex-1 text-sm font-medium ${task.completed ? 'line-through text-muted-foreground' : 'text-high-contrast'}`}>
                 {task.title}
               </span>
-              <span className="text-xs text-muted-foreground">{task.assignee}</span>
+              <span className="text-xs text-readable">{task.assignee}</span>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Family Photo Widget */}
+      <FamilyPhotoWidget />
     </div>
   );
 };

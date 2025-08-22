@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				'inter': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -55,6 +59,7 @@ export default {
 				},
 				glass: 'hsl(var(--glass))',
 				'glass-border': 'hsl(var(--glass-border))',
+				'glass-shadow': 'hsl(var(--glass-shadow))',
 				member: {
 					orange: 'hsl(var(--member-orange))',
 					blue: 'hsl(var(--member-blue))',
